@@ -38,8 +38,22 @@ namespace xadrez_console.xadrez
                 mat[pos.Linha, pos.Coluna] = true;
                
             }
+            // frente direita
+            pos.definirValores(posicao.Linha - 1, posicao.Coluna + 2);
+            if (tab.posicaoValida(pos) && podeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+
+            }
             // frente esquerda
             pos.definirValores(posicao.Linha - 2, posicao.Coluna - 1);
+            if (tab.posicaoValida(pos) && podeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+
+            }
+            // frente esquerda
+            pos.definirValores(posicao.Linha - 1, posicao.Coluna - 2);
             if (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;
@@ -53,9 +67,23 @@ namespace xadrez_console.xadrez
                 mat[pos.Linha, pos.Coluna] = true;
 
             }
+            // tras direita
+            pos.definirValores(posicao.Linha + 1, posicao.Coluna + 2);
+            if (tab.posicaoValida(pos) && podeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+
+            }
 
             // tras esquerda
             pos.definirValores(posicao.Linha + 2, posicao.Coluna - 1);
+            if (tab.posicaoValida(pos) && podeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+
+            }
+            // tras esquerda
+            pos.definirValores(posicao.Linha + 1, posicao.Coluna - 2);
             if (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;
